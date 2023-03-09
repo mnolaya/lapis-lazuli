@@ -3,7 +3,7 @@ def read_file_lines(filepath, encoding="utf-8"):
 
     Args:
         filepath (str of Path): Valid path to text-readable file.
-        mode (str, optional): Open mode. Defaults to "rb".
+        encoding (str, optional): File encoding. Defaults to "utf-8".
 
     Returns:
         list: List containing file contents line-by-line.
@@ -14,5 +14,6 @@ def read_file_lines(filepath, encoding="utf-8"):
     try:
         lines = readlines(filepath, "r", encoding)
     except:
-        lines = [r.decode("windows-1252") for r in readlines(filepath, "rb", encoding)]
+        encoding = "windows-1252"
+        lines = readlines(filepath, "r", encoding)
     return lines
