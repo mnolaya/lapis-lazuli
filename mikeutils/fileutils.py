@@ -1,4 +1,7 @@
-def read_file_lines(filepath, encoding="utf-8"):
+from typing import Union
+from pathlib import PurePath
+
+def read_file_lines(filepath: Union[str, PurePath], encoding: str="utf-8") -> list[str]:
     """Open a file, read, and return list of lines containing file contents.
 
     Args:
@@ -17,5 +20,3 @@ def read_file_lines(filepath, encoding="utf-8"):
         encoding = "windows-1252"
         lines = readlines(filepath, "r", encoding)
     return lines
-
-test = "hello"
