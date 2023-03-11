@@ -1,0 +1,2 @@
+%(levelname)s:%(name)s:%(asctime)s: %(message)s
+test
