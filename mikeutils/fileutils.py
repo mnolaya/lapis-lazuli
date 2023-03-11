@@ -17,3 +17,5 @@ def read_file_lines(filepath, encoding="utf-8"):
         encoding = "windows-1252"
         lines = readlines(filepath, "r", encoding)
     return lines
+
+test = "hello"
