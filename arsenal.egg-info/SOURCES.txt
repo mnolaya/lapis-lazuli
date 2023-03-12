@@ -1,7 +1,6 @@
 LICENSE
 README.md
 setup.py
-arsenal/__init__.py
 arsenal/fileutils.py
 arsenal/log.py
 arsenal.egg-info/PKG-INFO
