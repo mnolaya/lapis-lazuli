@@ -1,9 +1,0 @@
-LICENSE
-README.md
-setup.py
-mikeutils/__init__.py
-mikeutils/fileutils.py
-mikeutils.egg-info/PKG-INFO
-mikeutils.egg-info/SOURCES.txt
-mikeutils.egg-info/dependency_links.txt
-mikeutils.egg-info/top_level.txt
