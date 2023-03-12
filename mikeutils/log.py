@@ -11,7 +11,7 @@ _DEF_FMT = "%(levelname)s:%(name)s:%(asctime)s: %(message)s"
 class Logger(logging.Logger):
     name: str
     level: int
-    log_format:  str = field(default="", repr=False)
+    log_format:  str = field(default=_DEF_FMT, repr=False)
     formatter: logging.Formatter = field(init=False, repr=False)
     
     def __attrs_post_init__(self):
