@@ -1,9 +1,0 @@
-LICENSE
-README.md
-setup.py
-arsenal/fileutils.py
-arsenal/log.py
-arsenal.egg-info/PKG-INFO
-arsenal.egg-info/SOURCES.txt
-arsenal.egg-info/dependency_links.txt
-arsenal.egg-info/top_level.txt
