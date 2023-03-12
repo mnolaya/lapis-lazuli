@@ -19,6 +19,3 @@ def read_file_lines(filepath: str | PurePath, encoding: str = "utf-8") -> list[s
         encoding = "windows-1252"
         lines = readlines(filepath, "r", encoding)
     return lines
-
-import numpy as np
-np.array([1, 2, 3])
