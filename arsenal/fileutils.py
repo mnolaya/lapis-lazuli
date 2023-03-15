@@ -1,21 +1,34 @@
-from pathlib import PurePath
+from typing import Callable
+from io import TextIOBase
+from pathlib import Path
 
-def read_file_lines(filepath: str | PurePath, encoding: str = "utf-8") -> list[str]:
-    """Open a file, read, and return list of lines containing file contents.
+def open_txt_file(filepath: str | Path, func: Callable, mode="r") -> TextIOBase:
+    """Open .txt file and read contents to TextIO buffer.
 
     Args:
-        filepath (str of Path): Valid path to text-readable file.
-        encoding (str, optional): File encoding. Defaults to "utf-8".
+        filepath (str | Path): Path to valid .txt file.
+        mode (str, optional): Open mode. Defaults to "r".
 
     Returns:
-        list: List containing file contents line-by-line.
+        TextIOBase: File contents stored in buffer.
     """
-    def readlines(f, m, e):
-        with open(f, m, encoding=e) as f:
-            return f.readlines()
+    def opendo(f, e):
+        with open(f, mode, encoding=e) as f:
+            return func(f)
     try:
-        lines = readlines(filepath, "r", encoding)
-    except:
+        encoding = "utf-8"
+        return opendo(filepath, encoding)
+    except UnicodeDecodeError:
         encoding = "windows-1252"
-        lines = readlines(filepath, "r", encoding)
-    return lines
+        return opendo(filepath, encoding)
+    
+def read_textio_lines(io: TextIOBase) -> list[list[str]]:
+    """Read lines from TextIO."""
+    return io.readlines()
+
+if __name__ == "__main__":
+    test_txt_file = "E:/repos/material-characterization/characterize/kinetics/tests/!6.1.txt"
+    
+    
+    lines = open_txt_file(test_txt_file, read_textio_lines, mode="r")
+    # print(lines)
