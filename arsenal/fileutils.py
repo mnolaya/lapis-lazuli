@@ -2,7 +2,7 @@ from typing import Callable
 from io import TextIOBase
 from pathlib import Path
 
-def open_text_file(filepath: str | Path, func: Callable, mode="r") -> TextIOBase:
+def open_text_file(filepath: str | Path, func: Callable = None, mode="r") -> TextIOBase:
     """Open file containing text and read contents to TextIO buffer.
 
     Args:
@@ -14,7 +14,10 @@ def open_text_file(filepath: str | Path, func: Callable, mode="r") -> TextIOBase
     """
     def opendo(f, e):
         with open(f, mode, encoding=e) as f:
-            return func(f)
+            if func is None:
+                return read_textio_lines(f)
+            else:
+                return func(f)
     try:
         encoding = "utf-8"
         return opendo(filepath, encoding)
