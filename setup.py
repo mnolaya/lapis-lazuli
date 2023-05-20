@@ -1,11 +1,11 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="arsenal",
+    name="lazuli",
     version="0.0.1",
     author="Michael N. Olaya",
     author_email="michael.n.olaya@gmail.com",
-    description="Arsenal of Python utilities",
+    description="Various helpful Python utilities.",
     packages=find_packages(),
     install_requires=[],
 )

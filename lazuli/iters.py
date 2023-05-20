@@ -1,4 +1,4 @@
-import itertools, typing
+import itertools, typing, enum
 
 T = typing.TypeVar('T')
 

@@ -1,2 +1,2 @@
-# mikeutils
-Personal library of Python utilities for various projects
+# lazuli
+A library of various helpful Python utilities.
